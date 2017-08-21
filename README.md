@@ -1,2 +1,9 @@
-# galaxy-mothur-toolkit
-All information pertaining to the Galaxy Mothur Toolkit (GMT) project
+# Galaxy mothur Toolset
+
+All information pertaining to the Galaxy mothur Toolset (GmT) project
+
+## Publicationan
+
+## Docker
+
+## Training
