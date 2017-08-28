@@ -1,12 +1,9 @@
-# Galaxy - Metagenomics
-
 # base on 16.07 until new workflow run menu can handle mothur workflow without crashing
 FROM bgruening/galaxy-stable:16.07
 
 MAINTAINER Saskia Hiltemann, zazkia@gmail.com
 
-ENV GALAXY_CONFIG_BRAND="Galaxy Mothur Toolset" \
-    GALAXY_CONFIG_SANITIZE_ALL_HTML="False"
+ENV GALAXY_CONFIG_BRAND="Galaxy Mothur Toolset (GmT)"
 
 RUN pip install ephemeris -U
 
