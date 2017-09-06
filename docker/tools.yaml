@@ -2,24 +2,19 @@
 api_key: admin
 galaxy_instance: http://localhost:8080
 tool_shed_url: https://toolshed.g2.bx.psu.edu/
-install_resolver_dependencies: True
-install_tool_dependencies: False
 tools:
-- name: ireport
-  owner: saskia-hiltemann
-  tool_panel_section_label: "Visualisation"
-- name: suite_mothur
-  owner: iuc
-  tool_panel_section_label: "Mothur"
 - name: xy_plot
   owner: devteam
-  tool_panel_section_label: "Visualisation"
+  tool_panel_section_label: "Visualization"
 - name: collapse_collections
   owner: nml
   tool_panel_section_label: "Collection Operations"
 - name: newick_display
   owner: dcorreia
-  tool_panel_section_label: "Visualisation"
+  tool_panel_section_label: "Visualization"
 - name: krona_text
   owner: saskia-hiltemann
-  tool_panel_section_label: "Visualisation"
+  tool_panel_section_label: "Visualization"
+- name: suite_mothur
+  owner: iuc
+  tool_panel_section_label: "Mothur"
