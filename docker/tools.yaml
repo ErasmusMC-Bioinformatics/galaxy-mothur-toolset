@@ -18,3 +18,6 @@ tools:
 - name: suite_mothur
   owner: iuc
   tool_panel_section_label: "Mothur"
+- name: regex_find_replace
+  owner: galaxyp
+  tool_panel_section_label: "Text Manipulation"

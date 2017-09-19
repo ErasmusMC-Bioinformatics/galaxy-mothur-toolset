@@ -14,6 +14,8 @@ To run the docker image
 docker run -d -p 80:8080 quay.io/shiltemann/galaxy-mothur-toolset
 ```
 
+open a browser (firefox/chrome/safari, not IE) and navigate to `localhost:8080`. Log into Galaxy using the following credentials: `admin@galaxyproject.org:admin`. The workflow has been imported into this account, and all test data has been uploaded to a shared data library.
+
 
 To build the docker image from scratch, clone this repository, and run the following command from its root directory:
 

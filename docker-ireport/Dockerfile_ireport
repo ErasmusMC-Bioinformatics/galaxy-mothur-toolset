@@ -1,0 +1,11 @@
+# base on 16.07 until new workflow run menu can handle mothur workflow without crashing
+FROM bgruening/galaxy-stable:16.07
+
+
+# toolshed install for iReport works only sporadically, (ERROR: signal only works in main thread) so manually install (yuk)
+
+RUN git clone https://github.com/shiltemann/iReport.git ${GALAXY_ROOT}/tools/ireport && \
+    sed -i "s|\\\\\$REPOSITORY_PATH|${GALAXY_ROOT}/tools/ireport/|g" ${GALAXY_ROOT}/tools/ireport/iReport.xml
+
+ADD docker-ireport/tool_conf.xml.main ${GALAXY_ROOT}/config/tool_conf.xml.main
+ADD docker-ireport/tool_conf.xml.main ${GALAXY_ROOT}/config/tool_conf.xml.sample
