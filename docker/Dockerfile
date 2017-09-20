@@ -21,6 +21,9 @@ RUN startup_lite && \
 # everything is awful (conda package comes with wrong version of boost in this version of Galaxy for some reason)
 RUN /tool_deps/_conda/bin/conda install -n __mothur@1.36.1 -y boost=1.57.0
 
+# everything is more awful
+RUN /tool_deps/_conda/bin/conda install -n __fontconfig@2.11.1 pango -c asmeurer
+
 # install workflows and data libraries
 ADD workflow.ga $GALAXY_ROOT/workflow.ga
 ADD data_libraries.yaml $GALAXY_ROOT/data_libraries.yaml
