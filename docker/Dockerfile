@@ -3,7 +3,8 @@ FROM quay.io/shiltemann/galaxy-ireport:16.07
 
 MAINTAINER Saskia Hiltemann, zazkia@gmail.com
 
-ENV GALAXY_CONFIG_BRAND="Galaxy Mothur Toolset (GmT)"
+ENV GALAXY_CONFIG_BRAND="Galaxy Mothur Toolset (GmT)" \
+    GALAXY_CONFIG_CONDA_ENSURE_CHANNELS="iuc,bioconda,conda-forge,defaults,r"
 
 RUN apt-get update && apt-get install libxrender1
 RUN pip install -U ephemeris
@@ -15,7 +16,10 @@ ADD docker/tools.yaml $GALAXY_ROOT/tools.yaml
 RUN startup_lite && \
 	$GALAXY_ROOT/sleep.py http://localhost:8080 && \
 	shed-install -a $GALAXY_CONFIG_MASTER_API_KEY -t $GALAXY_ROOT/tools.yaml -g "http://localhost:8080" --toolshed "https://testtoolshed.g2.bx.psu.edu/" && \
-    sleep 120
+    sleep 360
+
+# everything is awful (conda package comes with wrong version of boost in this version of Galaxy for some reason)
+RUN /tool_deps/_conda/bin/conda install -n __mothur@1.36.1 -y boost=1.57.0
 
 # install workflows and data libraries
 ADD workflow.ga $GALAXY_ROOT/workflow.ga
